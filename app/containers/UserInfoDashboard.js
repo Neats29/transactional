@@ -18,8 +18,15 @@ export default class UserInfoDashboard extends React.Component {
 
 	handleClick() {
 		const beautify = (date) => date.split('-').reverse().join('-');
+		//const showAddress = (address) => address.street_address.map(a => a)
 		getUserInfo().then(info => {
-			this.setState({dob: beautify(info.date_of_birth)});
+			this.setState({
+				name: info.name,
+				dob: beautify(info.date_of_birth),
+				email: info.email,
+				phone: info.phone_number,
+				address: info.address.postal_code
+			});
 		});
 	}
 
