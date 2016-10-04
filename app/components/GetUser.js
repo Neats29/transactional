@@ -11,6 +11,7 @@ export default class GetUser extends React.Component {
 					<input type="text"/>
 				</div>
 				<button onClick={this.props.onClick}>Find User</button>
+				<div>{this.props.dob}</div>
 			</div>
 		)
 	}
