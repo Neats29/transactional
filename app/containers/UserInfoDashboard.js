@@ -2,33 +2,40 @@ import React from 'react';
 import axios from 'axios';
 import GetUser from '../components/GetUser'
 import ShowUser from '../components/ShowUser'
-import { getUserInfo } from '../utils/axiosHelpers'
+import ShowTransactions from '../components/ShowTransactions'
+import GetTransactions from '../components/GetTransactions'
+import { getUserInfo, getTransactionData } from '../utils/axiosHelpers'
 
 export default class UserInfoDashboard extends React.Component {
 	constructor(props) {
     super(props);
 		this.state = {
-			userInfo: ''
+			userInfo: '',
+			transactions: ''
 		}
 	}
 
 	handleClick() {
-		//const beautify = (date) => date.split('-').reverse().join('-');
-		//const showAddress = (address) => address.street_address.map(a => a)
-		let arr = this.state.userInfo;
 		getUserInfo().then(info => {
-			this.setState({
-				userInfo: info
-			});
+			this.setState({ userInfo: info });
 		});
 		console.log(this.state.userInfo)
 	}
 
+	getTransactions() {
+		getTransactionData().then(data => {
+			this.setState({ transactions: data });
+		});
+		//console.log(this.state.transactions)
+	}
+
 	render() {
 		return (
-			<div>
+			<div className="container">
 				<GetUser onClick={this.handleClick.bind(this)} />
 				<ShowUser userInfo={this.state.userInfo}/>
+				<GetTransactions onClick={this.getTransactions.bind(this)}/>
+				<ShowTransactions transactions={this.state.transactions}/>
 			</div>
 		)
 	}
