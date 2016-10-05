@@ -1,39 +1,34 @@
 import React from 'react';
 import axios from 'axios';
 import GetUser from '../components/GetUser'
+import ShowUser from '../components/ShowUser'
 import { getUserInfo } from '../utils/axiosHelpers'
 
 export default class UserInfoDashboard extends React.Component {
 	constructor(props) {
     super(props);
 		this.state = {
-			name: '',
-			dob: '',
-			email: '',
-			phone: '',
-			address: '',
-			user_id: ''
+			userInfo: ''
 		}
 	}
 
 	handleClick() {
-		const beautify = (date) => date.split('-').reverse().join('-');
+		//const beautify = (date) => date.split('-').reverse().join('-');
 		//const showAddress = (address) => address.street_address.map(a => a)
+		let arr = this.state.userInfo;
 		getUserInfo().then(info => {
 			this.setState({
-				name: info.name,
-				dob: beautify(info.date_of_birth),
-				email: info.email,
-				phone: info.phone_number,
-				address: info.address.postal_code
+				userInfo: info
 			});
 		});
+		console.log(this.state.userInfo)
 	}
 
 	render() {
 		return (
 			<div>
-				<GetUser onClick={this.handleClick.bind(this)} dob={this.state.dob}/>
+				<GetUser onClick={this.handleClick.bind(this)} />
+				<ShowUser userInfo={this.state.userInfo}/>
 			</div>
 		)
 	}
