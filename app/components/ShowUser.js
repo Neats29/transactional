@@ -17,7 +17,7 @@ export function ShowUser (props) {
 	return (
 		<div>
 			<ul>
-				{user.name && <li className="list-group-item">Name: {user.name}</li>}
+				{props.userInfo.name && <li className="list-group-item">Name: {props.userInfo.name}</li>}
 				{user.date_of_birth && <li className="list-group-item">Date of birth: {dob}</li>}
 				{user.email && <li className="list-group-item">Email: {user.email}</li>}
 				{user.phone_number && <li className="list-group-item">Phone Number: {phoneNumber}</li>}
@@ -29,7 +29,13 @@ export function ShowUser (props) {
 }
 
 ShowUser.propTypes = {
-	//look up the array props thing
-	//userInfo: 
+	userInfo: PropTypes.shape({
+		name:          PropTypes.string,
+		data_of_birth: PropTypes.string,
+		email:         PropTypes.string,
+		phone_number:  PropTypes.string,
+		address:       PropTypes.object,
+		user_id:       PropTypes.string
+	})
 }
 

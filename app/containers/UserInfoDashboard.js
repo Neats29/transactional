@@ -10,7 +10,7 @@ export default class UserInfoDashboard extends React.Component {
 	constructor(props) {
     super(props);
 		this.state = {
-			userInfo: '',
+			userInfo: {},
 			transactions: ''
 		}
 	}
@@ -26,7 +26,7 @@ export default class UserInfoDashboard extends React.Component {
 		getTransactionData().then(data => {
 			this.setState({ transactions: data });
 		});
-		//console.log(this.state.transactions)
+		console.log(this.state.transactions)
 	}
 
 	render() {
