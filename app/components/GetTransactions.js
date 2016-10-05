@@ -1,14 +1,18 @@
 import React from 'react';
+import { PropTypes } from 'react';
 
-export default class GetTransactions extends React.Component {
-	render() {
-		return (
+export function GetTransactions(props) {
+	return (
+		<div>
 			<div>
-				<div>
-					<h3>Show </h3>
-				</div>
-				<button onClick={this.props.onClick}></button>
+				<h3>Show </h3>
 			</div>
-		)
-	}
+			<button onClick={props.fetchTransactions}></button>
+		</div>
+	)
 }
+
+GetTransactions.propTypes = {
+	fetchTransactions: PropTypes.func.isRequired
+}
+

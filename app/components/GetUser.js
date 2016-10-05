@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'react';
 
 export default class GetUser extends React.Component {
 	render() {
@@ -10,12 +11,13 @@ export default class GetUser extends React.Component {
 					<input type="text"/>
 					<input type="text"/>
 				</div>
-				<button onClick={this.props.onClick}>Find User</button>
+				<button onClick={this.props.fetchUserInfo}>Find User</button>
 				<div>{this.props.dob}</div>
 			</div>
 		)
 	}
 }
 
-
-
+GetUser.propTypes = {
+	fetchUserInfo: PropTypes.func.isRequired
+}
