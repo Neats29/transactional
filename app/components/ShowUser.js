@@ -10,10 +10,8 @@ export function ShowUser (props) {
 	let phoneNumber = user.phone_number ? user.phone_number.replace(/\B(?=(\d{3})+(?!\d))/g, ' '): '';
 	let showFullAddress = (address) =>{
 		let full = '';
-		 full = address.street_address.join('\n')
-		//TODO: check why the line break is not working
-		 full = `${full}\n${address.locality}\n${address.postal_code}`;
-		 return full;
+		 full = address.street_address.join(' ');
+		 return `${full} ${address.locality} ${address.postal_code}`;
 	}
 	return (
 		<div className="row">
@@ -61,14 +59,24 @@ export function ShowUser (props) {
 						{user.user_id}
 					</li>
 				}
+				{
+					user.user_id &&
+					<li style={styles.listItem} className="list-group-item">
+						<span style={styles.label}>Member since: </span>XX-XX-XX
+						<br></br>
+						<span style={styles.label}>Customer loyalty score: </span>(Based on previous loyalty behaviour or complaints)
+					</li>
+				}
 			</ul>
 		</div>
 		{
 			user.email &&
 			<div className="col-md-2">
-				<button style={styles.btnGroup} className="btn btn-success">Update user info</button>
-				<button style={styles.btnGroup} className="btn btn-info">Setup direct debit</button>
+				<button style={styles.btnGroup} className="btn btn-primary">Update user info</button>
+				<button style={styles.btnGroup} className="btn btn-success">Most important corresponces</button>
+				<button style={styles.btnGroup} className="btn btn-info">Top up issues</button>
 				<button style={styles.btnGroup} className="btn btn-warning">Forgot PIN</button>
+				<button style={styles.btnGroup} className="btn ">All corresponces</button>
 				<button style={styles.btnGroup} className="btn btn-danger">Close account</button>
 			</div>
 		}

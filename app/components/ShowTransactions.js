@@ -14,7 +14,6 @@ export function ShowTransactions(props) {
 	var clone = Object.assign({}, styles.moreDetails);
 	clone.display = props.moreDetails ? "table-cell" : "none";
 
-	//TODO: add LOADING (there is a bit of delay with the get request
 	let transactionsList;
 	if (data && !props.isLoading) {
 		transactionsList = data.items.map((item, index) => {
@@ -72,8 +71,8 @@ export function ShowTransactions(props) {
 				  <div className="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style={{"width": "100%"}}>
 				  </div>
 				</div>
+				<br></br>
 			</div>
-
 		)
 	} else {
 		return (
