@@ -3,6 +3,7 @@
 1. `npm i`
 2. Dev server: `npm run start`
 3. Bundle up JS for production: `npm run production`
+4. `localhost:4000`
 
 ---
 ####Things I would do differently if this was a bigger project:
