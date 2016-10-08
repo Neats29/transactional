@@ -4,8 +4,8 @@
 
 ---
 ####Things I would do differently if this was a bigger project:
-- JS: I would use Redux and test the code. I would also consider using Flow.
-- Styling: I would use sass and structure the styling differently, and I would use another library over Bootstrap.
+- __JS__: I would use Redux and test the code. I would also consider using Flow.
+- __Styling__: I would use sass and structure the styling differently, and I would use another library over Bootstrap.
 
 ---
 ###Dummy UI
