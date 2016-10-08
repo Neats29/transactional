@@ -19,7 +19,7 @@ export const styles = {
 		display: 'inline-block',
 		textAlign: 'center',
 		marginRight: '5px'
-	}, 
+	},
 
 	listItem: {
 		background: monzoGray
@@ -50,7 +50,11 @@ export const styles = {
 	btnGroup: {
 		marginBottom: '20px',
 		width: '200px'
+	},
+
+	flagBtn: {
+		padding: '6px',
+    float: 'right'
 	}
 
 }
-

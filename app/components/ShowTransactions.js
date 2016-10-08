@@ -29,34 +29,44 @@ export function ShowTransactions(props) {
 							 <td colSpan="1" style={styles.transItem}>{monify(trans.amount)}</td>
 						</tr>
 						<tr>
-						 	<td colSpan="4">{trans.merchant && trans.merchant.emoji}<br></br>{trans.merchant && trans.merchant.address.formatted}<br></br>{trans.id}</td>
+						 	<td colSpan="4">{trans.merchant && trans.merchant.emoji}
+								<br></br>{trans.merchant && trans.merchant.address.formatted}
+								<br></br>Reference ID: {trans.id}
+								<br></br><button style={styles.flagBtn} className="btn btn-info">Flag</button>
+							</td>
 						</tr>
 					</tbody>
 				)
 			}
 		});
-	}
-	return (
-		<div style={styles.space}>
-			<div className="row">
-				{balance &&
-					<div>
-						<div className="col-md-2" style={styles.balance}>Current Balance: {monify(balance)}</div>
-						<div style={styles.space} className="col-md-2 dropdown">
-							<button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								Filter by Date/Category/Amount
-								<span className="caret"></span>
-							</button>
-						</div>
-					</div>}
-			</div>
-			<div className="row">
-				<div className="col-md-8">
-					<table style={styles.table} className="table table-hover">
-						{transactionsList}
-					</table>
+
+		return (
+				<div style={styles.space}>
+					<div className="row">
+						{balance &&
+							<div>
+								<div className="col-md-2" style={styles.balance}>Current Balance: {monify(balance)}</div>
+								<div style={styles.space} className="col-md-2 dropdown">
+									<button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										Filter by Date/Category/Amount
+										<span className="caret"></span>
+									</button>
+								</div>
+							</div>}
 					</div>
-			</div>
-		</div>
-	)
+					<div className="row">
+						<div className="col-md-8">
+							<table style={styles.table} className="table table-hover">
+								{transactionsList}
+							</table>
+							</div>
+					</div>
+					<button className="btn btn-primary">Show all transactions</button>
+				</div>
+		)
+	} else {
+		return (
+			<div style={styles.space}>No transactions yet</div>
+		)
+	}
 }
