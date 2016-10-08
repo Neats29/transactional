@@ -6,7 +6,6 @@ const transactionsEndpoint = apiRoot + 'list';
 export function getUserInfo() {
 	return axios.get(profileEndpoint)
 		.then(response => {
-			console.log(response.data);
 			return response.data;
 		})
 		.catch(error => {
@@ -17,7 +16,7 @@ export function getUserInfo() {
 export function getTransactionData() {
 	return axios.get(transactionsEndpoint)
 		.then(response => {
-			//console.log("trans: " + response.data.items[0]);
+			console.log("inside the helper " + typeof data);
 			return response.data;
 		})
 		.catch(error => {

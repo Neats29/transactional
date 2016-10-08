@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'react';
 import { styles } from '../styles/style'
 
-export function Logo(props) {
+export function Logo() {
 	return (
 		<div style={styles.space} className="row">
 			<div>
@@ -13,7 +13,3 @@ export function Logo(props) {
 		</div>
 	)
 }
-
-//GetTransactions.propTypes = {
-	//fetchTransactions: PropTypes.func.isRequired
-//}

@@ -1,12 +1,12 @@
 import React from 'react';
 import { PropTypes } from 'react';
 import { styles } from '../styles/style';
+import { reverseDate } from '../utils/cleanUp'
 
-//TODO: Explore testing
+
 export function ShowUser (props) {
-	const beautify = (date) => date.split('-').reverse().join('-');
 	let user = props.userInfo;
-	let dob = user.date_of_birth ? beautify(user.date_of_birth) : '';
+	let dob = user.date_of_birth ? reverseDate(user.date_of_birth) : '';
 	let phoneNumber = user.phone_number ? user.phone_number.replace(/\B(?=(\d{3})+(?!\d))/g, ' '): '';
 	let showFullAddress = (address) =>{
 		let full = '';

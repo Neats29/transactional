@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserInfoDashboard from './containers/UserInfoDashboard';
+import Dashboard from './containers/Dashboard';
 
 export class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<UserInfoDashboard />
+				<Dashboard />
 			</div>
 		)
 	}

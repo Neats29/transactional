@@ -39,12 +39,20 @@ export const styles = {
 	},
 
 	transItem: {
-		padding: '12px'
+		padding: '12px',
+		fontWeight: '500'
 	},
 
 	table: {
 		border: '1px solid #dddddd',
-		borderRadius: borderRadius
+		borderRadius: borderRadius,
+		borderCollapse: 'collapse'
+	},
+
+	moreDetails: {
+		display: "none",
+		background: monzoGray,
+		fontWeight: '400'
 	},
 
 	btnGroup: {

@@ -7,12 +7,14 @@ import { GetTransactions } from '../components/GetTransactions'
 import { Logo } from '../components/Logo'
 import { getUserInfo, getTransactionData } from '../utils/axiosHelpers'
 
-export default class UserInfoDashboard extends React.Component {
+export default class Dashboard extends React.Component {
 	constructor(props) {
     super(props);
 		this.state = {
 			userInfo: {},
-			transactions: ''
+			transactions: {},
+			moreDetails: false,
+			isLoading: false
 		}
 	}
 
@@ -20,33 +22,30 @@ export default class UserInfoDashboard extends React.Component {
 		getUserInfo().then(info => {
 			this.setState({ userInfo: info });
 		});
-		console.log(this.state.userInfo)
 	}
 
 	fetchTransactions() {
+		this.setState({ isLoading: true });
 		getTransactionData().then(data => {
-			this.setState({ transactions: data });
+			this.setState({ transactions: data, isLoading: false });
 		});
-		console.log(this.state.transactions)
 	}
 
 	viewMoreDetails() {
-
+		this.setState({ moreDetails: !this.state.moreDetails });
 	}
 
 	render() {
 		return (
 			<div className="container">
-				<div className="">
+				<div>
 					<Logo />
 					<GetUser fetchUserInfo={this.fetchUserInfo.bind(this)} />
 					<ShowUser userInfo={this.state.userInfo}/>
 					<GetTransactions fetchTransactions={this.fetchTransactions.bind(this)}/>
-					<ShowTransactions transactions={this.state.transactions}/>
+					<ShowTransactions transactions={this.state.transactions} isLoading={this.state.isLoading} viewMoreDetails={this.viewMoreDetails.bind(this)} moreDetails={this.state.moreDetails}/>
 				</div>
 			</div>
 		)
 	}
 }
-
-
