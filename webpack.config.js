@@ -1,4 +1,6 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+//var css = require("./app/components/getUser.css");
+
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -15,10 +17,10 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.js$/, loader: "babel-loader", exclude: /node_modules/, 		query: {
-          presets: ['es2015', 'react']
-        }
-}
+      {test: /\.js$/, loader: "babel-loader", exclude: /node_modules/,
+				query: { presets: ['es2015', 'react'] }
+			}
+			//{ test: /\.css$/, loader: "!css-loader" }
     ],
   },
   plugins: [HTMLWebpackPluginConfig],

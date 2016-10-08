@@ -4,6 +4,7 @@ import GetUser from '../components/GetUser'
 import { ShowUser } from '../components/ShowUser'
 import { ShowTransactions } from '../components/ShowTransactions'
 import { GetTransactions } from '../components/GetTransactions'
+import { Logo } from '../components/Logo'
 import { getUserInfo, getTransactionData } from '../utils/axiosHelpers'
 
 export default class UserInfoDashboard extends React.Component {
@@ -32,10 +33,13 @@ export default class UserInfoDashboard extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<GetUser fetchUserInfo={this.fetchUserInfo.bind(this)} />
-				<ShowUser userInfo={this.state.userInfo}/>
-				<GetTransactions fetchTransactions={this.fetchTransactions.bind(this)}/>
-				<ShowTransactions transactions={this.state.transactions}/>
+				<div className="">
+					<Logo />
+					<GetUser fetchUserInfo={this.fetchUserInfo.bind(this)} />
+					<ShowUser userInfo={this.state.userInfo}/>
+					<GetTransactions fetchTransactions={this.fetchTransactions.bind(this)}/>
+					<ShowTransactions transactions={this.state.transactions}/>
+				</div>
 			</div>
 		)
 	}

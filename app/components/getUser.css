@@ -1,0 +1,16 @@
+.dobInput {
+	width: 30px;
+	height: 30px;
+	border-radius: 4px;
+	background: #F3F4F5;
+	border: none;
+	display: inline-block;
+}
+/*:local(.dobInput) {*/
+	/*width: 30px;*/
+	/*height: 30px;*/
+	/*border-radius: 4px;*/
+	/*background: #F3F4F5;*/
+	/*border: none;*/
+	/*display: inline-block;*/
+/*} */

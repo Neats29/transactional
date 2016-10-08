@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'react';
+import { styles } from '../styles/style';
 
 //TODO: Explore testing
 export function ShowUser (props) {
@@ -15,15 +16,53 @@ export function ShowUser (props) {
 		 return full;
 	}
 	return (
-		<div>
+		<div className="row">
+		<div className="col-md-8">
 			<ul>
-				{props.userInfo.name && <li className="list-group-item">Name: {props.userInfo.name}</li>}
-				{user.date_of_birth && <li className="list-group-item">Date of birth: {dob}</li>}
-				{user.email && <li className="list-group-item">Email: {user.email}</li>}
-				{user.phone_number && <li className="list-group-item">Phone Number: {phoneNumber}</li>}
-				{user.address && <li className="list-group-item">Full Address: {showFullAddress(user.address)}</li>}
-				{user.user_id && <li className="list-group-item">User ID: {user.user_id}</li>}
+				{
+					props.userInfo.name &&
+					<li style={styles.listItem} className="list-group-item">
+						<span style={styles.label}>Name: </span>
+						{props.userInfo.name}
+					</li>
+				}
+				{
+					user.date_of_birth &&
+					<li className="list-group-item">
+						<span style={styles.label}>Date of birth: </span>
+						{dob}
+					</li>
+				}
+				{
+					user.email &&
+					<li style={styles.listItem} className="list-group-item">
+						<span style={styles.label}>Email: </span>
+						{user.email}
+					</li>
+				}
+				{
+					user.phone_number &&
+					<li className="list-group-item">
+						<span style={styles.label}>Phone Number: </span>
+						{phoneNumber}
+					</li>
+				}
+				{
+					user.address &&
+					<li style={styles.listItem} className="list-group-item">
+						<span style={styles.label}>Full Address: </span>
+						{showFullAddress(user.address)}
+					</li>
+				}
+				{
+					user.user_id &&
+					<li className="list-group-item">
+						<span style={styles.label}>User ID: </span>
+						{user.user_id}
+					</li>
+				}
 			</ul>
+		</div>
 		</div>
 	)
 }
@@ -38,4 +77,3 @@ ShowUser.propTypes = {
 		user_id:       PropTypes.string
 	})
 }
-

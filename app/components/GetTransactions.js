@@ -1,13 +1,13 @@
 import React from 'react';
 import { PropTypes } from 'react';
+import { styles } from '../styles/style';
 
 export function GetTransactions(props) {
 	return (
-		<div>
-			<div>
-				<h3>Show </h3>
+		<div className="row" style={styles.space}>
+			<div class="col-md-8">
 			</div>
-			<button onClick={props.fetchTransactions}></button>
+			<button className="btn btn-primary" onClick={props.fetchTransactions}>Show the last 10 transactions</button>
 		</div>
 	)
 }
