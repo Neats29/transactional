@@ -14,7 +14,6 @@ export function ShowTransactions(props) {
 	var clone = Object.assign({}, styles.moreDetails);
 	clone.display = props.moreDetails ? "table-cell" : "none";
 
-	//TODO: add LOADING (there is a bit of delay with the get request
 	let transactionsList;
 	if (data && !props.isLoading) {
 		transactionsList = data.items.map((item, index) => {

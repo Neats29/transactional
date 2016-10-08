@@ -16,7 +16,6 @@ export function getUserInfo() {
 export function getTransactionData() {
 	return axios.get(transactionsEndpoint)
 		.then(response => {
-			console.log("inside the helper " + typeof data);
 			return response.data;
 		})
 		.catch(error => {

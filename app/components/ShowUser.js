@@ -10,10 +10,8 @@ export function ShowUser (props) {
 	let phoneNumber = user.phone_number ? user.phone_number.replace(/\B(?=(\d{3})+(?!\d))/g, ' '): '';
 	let showFullAddress = (address) =>{
 		let full = '';
-		 full = address.street_address.join('\n')
-		//TODO: check why the line break is not working
-		 full = `${full}\n${address.locality}\n${address.postal_code}`;
-		 return full;
+		 full = address.street_address.join(' ');
+		 return `${full} ${address.locality} ${address.postal_code}`;
 	}
 	return (
 		<div className="row">
