@@ -9,16 +9,29 @@ export const styles = {
 		display: 'inline-block'
 	},
 
-	dobInput: {
+	emailInput: {
 		display: 'inline',
-		width: '40px',
+		width: '200px',
 		height: '40px',
 		borderRadius: borderRadius,
 		background: monzoGray,
 		border: 'none',
 		display: 'inline-block',
-		textAlign: 'center',
-		marginRight: '5px'
+		marginRight: '5px',
+		padding: '10px'
+	},
+
+	securityNumber: {
+		display: 'inline',
+		width: '60px',
+		height: '40px',
+		borderRadius: borderRadius,
+		background: monzoGray,
+		border: 'none',
+		display: 'inline-block',
+		marginRight: '8px',
+		padding: '10px',
+		textAlign: 'center'
 	},
 
 	listItem: {
@@ -57,7 +70,7 @@ export const styles = {
 
 	btnGroup: {
 		marginBottom: '20px',
-		width: '200px'
+		width: '210px'
 	},
 
 	flagBtn: {
