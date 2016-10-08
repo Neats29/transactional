@@ -63,6 +63,15 @@ export function ShowUser (props) {
 				}
 			</ul>
 		</div>
+		{
+			user.email &&
+			<div className="col-md-2">
+				<button style={styles.btnGroup} className="btn btn-success">Update user info</button>
+				<button style={styles.btnGroup} className="btn btn-info">Setup direct debit</button>
+				<button style={styles.btnGroup} className="btn btn-warning">Forgot PIN</button>
+				<button style={styles.btnGroup} className="btn btn-danger">Close account</button>
+			</div>
+		}
 		</div>
 	)
 }

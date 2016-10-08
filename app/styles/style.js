@@ -1,3 +1,5 @@
+const monzoGray = '#F3F4F5';
+const borderRadius = '4px';
 export const styles = {
 	space: {
 		margin: '35px'
@@ -11,8 +13,8 @@ export const styles = {
 		display: 'inline',
 		width: '40px',
 		height: '40px',
-		borderRadius: '4px',
-		background: '#F3F4F5',
+		borderRadius: borderRadius,
+		background: monzoGray,
 		border: 'none',
 		display: 'inline-block',
 		textAlign: 'center',
@@ -20,7 +22,7 @@ export const styles = {
 	}, 
 
 	listItem: {
-		background: '#F3F4F5'
+		background: monzoGray
 	},
 
 	label: {
@@ -31,12 +33,24 @@ export const styles = {
 		background: '#ff5353',
 		padding: '8px',
 		color: 'white',
-		borderRadius: '4px'
+		borderRadius: borderRadius,
+		margin: '35px',
+		marginLeft: '13px'
 	},
 
 	transItem: {
-		padding: '20px'
-		//marginRight: '30px'
+		padding: '12px'
+	},
+
+	table: {
+		border: '1px solid #dddddd',
+		borderRadius: borderRadius
+	},
+
+	btnGroup: {
+		marginBottom: '20px',
+		width: '200px'
 	}
+
 }
 

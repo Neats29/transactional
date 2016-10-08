@@ -30,6 +30,10 @@ export default class UserInfoDashboard extends React.Component {
 		console.log(this.state.transactions)
 	}
 
+	viewMoreDetails() {
+
+	}
+
 	render() {
 		return (
 			<div className="container">
