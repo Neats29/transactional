@@ -2,7 +2,7 @@
   "name": "transactional",
   "version": "1.0.0",
   "description": "Pimp my transactions.",
-  "main": "dist/index_bundle.js",
+  "main": "index_bundle.js",
   "scripts": {
     "production": "webpack -p",
     "start": "webpack-dev-server"
