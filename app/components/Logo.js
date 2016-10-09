@@ -7,7 +7,7 @@ export function Logo() {
 		<div style={styles.space} className="row">
 			<div>
 			<div className="col-md-1">
-				<a href="https://monzo.com/"><img src="../../assets/images/logo.svg" alt="Monzo"></img></a>
+				<a href="https://monzo.com/"><img src="../assets/images/logo.svg" alt="Monzo"></img></a>
 			</div>
 			</div>
 		</div>
