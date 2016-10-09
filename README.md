@@ -5,6 +5,8 @@
 3. Bundle up JS for production: `npm run production`
 4. `localhost:4000`
 
+The `master` branch is most up to date. The live site is on the `gh-pages` branch 
+
 ---
 ####Things I would do differently if this was a bigger project:
 - __JS__: I would use Redux and test the code. I would also consider using Flow.

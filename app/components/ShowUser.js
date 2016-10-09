@@ -3,7 +3,6 @@ import { PropTypes } from 'react';
 import { styles } from '../styles/style';
 import { reverseDate } from '../utils/cleanUp'
 
-
 export function ShowUser (props) {
 	let user = props.userInfo;
 	let dob = user.date_of_birth ? reverseDate(user.date_of_birth) : '';

@@ -31,6 +31,7 @@ export default class Dashboard extends React.Component {
 		});
 	}
 
+	//for the transactions table. if you click on each row, the row is expanded to show more details
 	viewMoreDetails() {
 		this.setState({ moreDetails: !this.state.moreDetails });
 	}

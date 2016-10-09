@@ -1,3 +1,4 @@
+//It takes the date in it's raw format and returns in DD MON YY format, used for the date of transaction
 //I would probably use moment.js or similar for this
 //This is just a quick implementation to demonstrate the UI
 export const monthify = date =>  {
@@ -13,12 +14,16 @@ export const monthify = date =>  {
 }
 
 //TODO: check for currency
+// removes a minus sign at the beginning of the transactions' amounts, and places a comma after evry 3 digit from the right
 export const monify = n => '£' + n.toString().replace('-', '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+
+//Makes first letter uppercase and removes the dash (use for name of transactions)
 export const beautify = name => {
 	 name = name.replace('_', ' ');
 	 let first = name.charAt(0).toUpperCase();
 	 return first + name.substring(1, name.length);
 };
 
+//takes the date of birth in YY-MM-DD and reverses to DD-MM-YY
 export const reverseDate = (date) => date.split('-').reverse().join('-');

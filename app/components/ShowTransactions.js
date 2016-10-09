@@ -3,11 +3,10 @@ import { PropTypes } from 'react';
 import { styles } from '../styles/style';
 import { monthify, beautify, monify } from '../utils/cleanUp';
 
-
 export function ShowTransactions(props) {
-	//How to add this check
-	//because props.transactions would evaluate to null why it's fetching data.
-	//Could fix by setting initial value of this.state.transactions to empty string but doesn't feel right and propTypes would complain about the discrepancy of types
+	//Had to add this check
+	//because props.transactions would evaluate to null while it's fetching data.
+	//Could fix by setting initial value of this.state.transactions to empty string but doesn't feel right and propTypes would complain about the discrepancy between the types
 	let data = Object.getOwnPropertyNames(props.transactions).length > 0 ? props.transactions : null;
 
 	let balance = data ? data.items[0].transaction.account_balance : '';
