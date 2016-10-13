@@ -42,7 +42,8 @@ export function ShowTransactions(props) {
 		return (
 				<div style={styles.space}>
 					<div className="row">
-						{balance &&
+						{
+							balance &&
 							<div>
 								<div className="col-md-2" style={styles.balance}>Current Balance: {monify(balance)}</div>
 								<div style={styles.space} className="col-md-2 dropdown">
@@ -51,7 +52,8 @@ export function ShowTransactions(props) {
 										<span className="caret"></span>
 									</button>
 								</div>
-							</div>}
+							</div>
+						}
 					</div>
 					<div className="row">
 						<div className="col-md-8">

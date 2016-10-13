@@ -15,7 +15,8 @@ export const monthify = date =>  {
 
 //TODO: check for currency
 // removes a minus sign at the beginning of the transactions' amounts, and places a comma after evry 3 digit from the right
-export const monify = n => '£' + n.toString().replace('-', '').replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+const threeSpacer = /\B(?=(\d{3})+(?!\d))/g;
+export const monify = n => '£' + n.toString().replace('-', '').replace(threeSpacer, ",");
 
 
 //Makes first letter uppercase and removes the dash (use for name of transactions)
@@ -27,3 +28,6 @@ export const beautify = name => {
 
 //takes the date of birth in YY-MM-DD and reverses to DD-MM-YY
 export const reverseDate = (date) => date.split('-').reverse().join('-');
+
+//adds a space after every 3 digits.
+export const cleanUpPhoneNum = (num) => num.replace(threeSpacer, ' ');

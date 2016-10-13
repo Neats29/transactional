@@ -1,13 +1,13 @@
 import React from 'react';
 import { PropTypes } from 'react';
 import { styles } from '../styles/style';
-import { reverseDate } from '../utils/cleanUp'
+import { reverseDate, cleanUpPhoneNum } from '../utils/cleanUp'
 
 export function ShowUser (props) {
 	let user = props.userInfo;
 	let dob = user.date_of_birth ? reverseDate(user.date_of_birth) : '';
-	let phoneNumber = user.phone_number ? user.phone_number.replace(/\B(?=(\d{3})+(?!\d))/g, ' '): '';
-	let showFullAddress = (address) =>{
+	let phoneNumber = user.phone_number ? cleanUpPhoneNum(user.phone_number): '';
+	let showFullAddress = (address) => {
 		let full = '';
 		 full = address.street_address.join(' ');
 		 return `${full} ${address.locality} ${address.postal_code}`;
