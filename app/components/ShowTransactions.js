@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 import { styles } from '../styles/style';
 import { monthify, beautify, monify } from '../utils/cleanUp';
-import { ProgressBar } from './ProgressBar'
+import { ProgressBar } from './ProgressBar';
+import { TransactionsContent } from './TransactionsContent';
 
 export function ShowTransactions(props) {
 	//Had to add this check
@@ -10,7 +11,7 @@ export function ShowTransactions(props) {
 	let data = Object.getOwnPropertyNames(props.transactions).length > 0 ? props.transactions : null;
 
 	let balance = data ? data.items[0].transaction.account_balance : '';
-	var clone = Object.assign({}, styles.moreDetails);
+	const clone = Object.assign({}, styles.moreDetails);
 	clone.display = props.moreDetails ? "table-cell" : "none";
 
 	let transactionsList;
@@ -38,38 +39,12 @@ export function ShowTransactions(props) {
 				)
 			}
 		});
-
-		return (
-				<div style={styles.space}>
-					<div className="row">
-						{
-							balance &&
-							<div>
-								<div className="col-md-2" style={styles.balance}>Current Balance: {monify(balance)}</div>
-								<div style={styles.space} className="col-md-2 dropdown">
-									<button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-										Filter by Date/Category/Amount
-										<span className="caret"></span>
-									</button>
-								</div>
-							</div>
-						}
-					</div>
-					<div className="row">
-						<div className="col-md-8">
-							<table style={styles.table} className="table table-hover">
-								{transactionsList}
-							</table>
-							</div>
-					</div>
-					<button className="btn btn-primary">Show all transactions</button>
-				</div>
-		)
-	} else if (props.isLoading) {
-		return <ProgressBar />
-	} else {
-		return <div style={styles.space}>No transactions yet</div>
 	}
+
+	return data && !props.isLoading ? 
+		<TransactionsContent balance={monify(balance)} transactionsList={transactionsList} /> :
+		props.isLoading ? <ProgressBar /> :
+		<div style={styles.space}>No transactions yet</div>;
 }
 
 
