@@ -15,7 +15,8 @@ export function ShowTransactions(props) {
 	clone.display = props.moreDetails ? "table-cell" : "none";
 
 	let transactionsList;
-	if (data && !props.isLoading) {
+  const dataHasLoaded = data && !props.isLoading;
+	if (dataHasLoaded) {
 		transactionsList = data.items.map((item, index) => {
 			if (index < 10) {
 				let trans = item.transaction;
@@ -41,7 +42,7 @@ export function ShowTransactions(props) {
 		});
 	}
 
-	return data && !props.isLoading ? 
+	return dataHasLoaded ? 
 		<TransactionsContent balance={monify(balance)} transactionsList={transactionsList} /> :
 		props.isLoading ? <ProgressBar /> :
 		<div style={styles.space}>No transactions yet</div>;
