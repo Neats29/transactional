@@ -1,4 +1,4 @@
-//It takes the date in it's raw format and returns in DD MON YY format, used for the date of transaction
+//It takes the date in its raw format and returns in DD MON YY format, used for the date of transaction
 //I would probably use moment.js or similar for this
 //This is just a quick implementation to demonstrate the UI
 export const monthify = date =>  {
@@ -19,7 +19,7 @@ const threeSpacer = /\B(?=(\d{3})+(?!\d))/g;
 export const monify = n => '£' + n.toString().replace('-', '').replace(threeSpacer, ",");
 
 
-//Makes first letter uppercase and removes the dash (use for name of transactions)
+//Makes first letter uppercase and removes the dash (used for name of transactions)
 export const beautify = name => {
 	 name = name.replace('_', ' ');
 	 let first = name.charAt(0).toUpperCase();
