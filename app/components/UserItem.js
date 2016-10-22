@@ -15,3 +15,9 @@ export function UserItem(props) {
 		</span>
 	)
 }
+
+UserItem.propTypes = {
+	style: PropTypes.object.isRequired,
+	userItem: PropTypes.string.isRequired,
+	label: PropTypes.string.isRequired
+}

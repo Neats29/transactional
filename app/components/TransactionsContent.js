@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { styles } from '../styles/style';
 
 export function TransactionsContent(props) {
@@ -28,4 +28,9 @@ export function TransactionsContent(props) {
 			<button className="btn btn-primary">Show all transactions</button>
 		</div>
 	)
+}
+
+TransactionsContent.propTypes = {
+	transactionsList: PropTypes.array.isRequired,
+	balance: PropTypes.string.isRequired
 }
