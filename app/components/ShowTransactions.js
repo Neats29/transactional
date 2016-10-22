@@ -1,7 +1,7 @@
-import React from 'react';
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { styles } from '../styles/style';
 import { monthify, beautify, monify } from '../utils/cleanUp';
+import { ProgressBar } from './ProgressBar'
 
 export function ShowTransactions(props) {
 	//Had to add this check
@@ -66,19 +66,9 @@ export function ShowTransactions(props) {
 				</div>
 		)
 	} else if (props.isLoading) {
-		return (
-			<div className="col-md-4">
-				<div className="progress">
-				  <div className="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style={{"width": "100%"}}>
-				  </div>
-				</div>
-				<br></br>
-			</div>
-		)
+		return <ProgressBar />
 	} else {
-		return (
-			<div style={styles.space}>No transactions yet</div>
-		)
+		return <div style={styles.space}>No transactions yet</div>
 	}
 }
 

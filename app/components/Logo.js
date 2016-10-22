@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropTypes } from 'react';
 import { styles } from '../styles/style'
 
 export function Logo() {

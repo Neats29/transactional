@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import GetUser from '../components/GetUser'
+import { GetUser } from '../components/GetUser'
 import { ShowUser } from '../components/ShowUser'
 import { ShowTransactions } from '../components/ShowTransactions'
 import { GetTransactions } from '../components/GetTransactions'
