@@ -7,17 +7,17 @@ export function UserItem(props) {
 	return (
 		<span>
 			{ item &&
-			<li style={props.style} className="list-group-item">
-				<span style={styles.label}>{label}: </span>
-				{item}
-			</li>
+				<li style={props.style} className="list-group-item">
+					<span style={styles.label}>{label}: </span>
+					{item}
+				</li>
 			}
 		</span>
 	)
 }
 
 UserItem.propTypes = {
-	style: PropTypes.object.isRequired,
-	userItem: PropTypes.string.isRequired,
+	style: PropTypes.object,
+	userItem: PropTypes.string,
 	label: PropTypes.string.isRequired
 }

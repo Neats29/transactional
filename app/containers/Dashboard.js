@@ -44,7 +44,11 @@ export default class Dashboard extends React.Component {
 					<GetUser fetchUserInfo={this.fetchUserInfo.bind(this)} />
 					<ShowUser userInfo={this.state.userInfo}/>
 					<GetTransactions fetchTransactions={this.fetchTransactions.bind(this)}/>
-					<ShowTransactions transactions={this.state.transactions} isLoading={this.state.isLoading} viewMoreDetails={this.viewMoreDetails.bind(this)} moreDetails={this.state.moreDetails}/>
+					<ShowTransactions
+						transactions={this.state.transactions}
+						isLoading={this.state.isLoading}
+						viewMoreDetails={this.viewMoreDetails.bind(this)}
+						moreDetails={this.state.moreDetails}/>
 				</div>
 			</div>
 		)
