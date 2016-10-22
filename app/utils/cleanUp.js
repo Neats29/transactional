@@ -2,10 +2,10 @@
 //I would probably use moment.js or similar for this
 //This is just a quick implementation to demonstrate the UI
 export const monthify = date =>  {
-	var day = date.substring(8, 10);
-	var year = date.substring(2, 4);
-	var month = date.substring(5, 7);
-	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	const day = date.substring(8, 10);
+	const year = date.substring(2, 4);
+	let month = date.substring(5, 7);
+	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 	if (month.charAt(0) === '0' ) {
 		 month = month.substr(1);
 	}
@@ -22,7 +22,7 @@ export const monify = n => '£' + n.toString().replace('-', '').replace(threeSpa
 //Makes first letter uppercase and removes the dash (used for name of transactions)
 export const beautify = name => {
 	 name = name.replace('_', ' ');
-	 let first = name.charAt(0).toUpperCase();
+	 const first = name.charAt(0).toUpperCase();
 	 return first + name.substring(1, name.length);
 };
 

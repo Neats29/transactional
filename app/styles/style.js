@@ -77,5 +77,4 @@ export const styles = {
 		padding: '6px',
     float: 'right'
 	}
-
 }
