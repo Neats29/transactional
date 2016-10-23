@@ -6,7 +6,6 @@ import { TransactionsContent } from './TransactionsContent';
 
 export function ShowTransactions(props) {
 	let data = Object.getOwnPropertyNames(props.transactions).length > 0 ? props.transactions : null;
-
 	let balance = data ? data.items[0].transaction.account_balance : '';
 	const clone = Object.assign({}, styles.moreDetails);
 	clone.display = props.moreDetails ? "table-cell" : "none";
