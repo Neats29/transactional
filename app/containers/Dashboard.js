@@ -1,11 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 import { GetUser } from '../components/GetUser'
 import { ShowUser } from '../components/ShowUser'
 import { ShowTransactions } from '../components/ShowTransactions'
 import { GetTransactions } from '../components/GetTransactions'
 import { Logo } from '../components/Logo'
-import { getUserInfo, getTransactionData } from '../utils/axiosHelpers'
+import { getUserInfo, getTransactionData } from '../utils/fetchHelpers'
 
 export default class Dashboard extends React.Component {
 	constructor(props) {
@@ -19,14 +18,14 @@ export default class Dashboard extends React.Component {
 	}
 
 	fetchUserInfo() {
-		getUserInfo().then(info => {
+		getUserInfo.then(info => {
 			this.setState({ userInfo: info });
 		});
 	}
 
 	fetchTransactions() {
 		this.setState({ isLoading: true });
-		getTransactionData().then(data => {
+		getTransactionData.then(data => {
 			this.setState({ transactions: data, isLoading: false });
 		});
 	}
